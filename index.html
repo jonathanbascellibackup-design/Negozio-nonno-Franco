@@ -15,33 +15,7 @@
     <link rel="apple-touch-icon" href="favicon.ico">
     <link rel="shortcut icon" href="favicon.ico?v=2">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Scratch to Learn",
-      "url": "https://scratchtolearn.github.io/",
-      "logo": "https://scratchtolearn.github.io/favicon.ico",
-      
-      "founder": {
-        "@type": "Person",
-        "name": "Jonathan Bascelli"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Progetti Didattici",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "CreativeWork",
-              "name": "..."
-            }
-          }
-        ]
-      }
-    }
-    </script>
+    
 
     <style>
         :root { color-scheme: light; }
@@ -57,9 +31,7 @@
 </head>
 <body>
 
-<div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-    <img src="favicon.ico" alt="Logo Scratch to Learn" style="width: 150px; height: auto;">
-</div>
+
 
 <h1 style="
     text-align: center; font-family: 'Courier New', monospace; font-size: 5rem; 
@@ -124,42 +96,15 @@
     color: #000000; line-height: 1.6; max-width: 800px; margin: 0 auto 30px auto; padding: 0 20px;">
     questo prodotto è un esempio
 </p>
-
+<div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+    <img src="favicon.ico" alt="immagine del prodotto" style="width: 150px; height: auto;">
+</div>
 
 
 <hr style="border: 1px solid #eee; margin: 60px 0;">
 
 function cercaProgetti() {
-    let input = document.getElementById('searchInput');
-    let filter = input.value.toLowerCase();
-    let boxRisultati = document.getElementById('risultatiRicerca');
-    let titoli = document.querySelectorAll('.titolo-progetto');
-    boxRisultati.innerHTML = '';
-    if (filter === "") { boxRisultati.style.display = "none"; return; }
-    let trovati = 0;
-    titoli.forEach((titolo) => {
-        let testoTitolo = titolo.innerText;
-        if (testoTitolo.toLowerCase().includes(filter)) {
-            trovati++;
-            let elemento = document.createElement('div');
-            elemento.innerHTML = testoTitolo;
-            elemento.style.padding = "12px 20px";
-            elemento.style.cursor = "pointer";
-            elemento.onclick = function() {
-                titolo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                boxRisultati.style.display = "none";
-                input.value = testoTitolo;
-            };
-            boxRisultati.appendChild(elemento);
-        }
-    });
-    boxRisultati.style.display = trovati > 0 ? "block" : "none";
-}
-document.addEventListener('click', function(e) {
-    if (e.target.id !== 'searchInput' && e.target.id !== 'risultatiRicerca') {
-        document.getElementById('risultatiRicerca').style.display = "none";
-    }
-});
+
 </script>
 </body>
 </html>
